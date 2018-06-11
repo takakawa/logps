@@ -1,4 +1,7 @@
-# Compile
+# logps
+A tool to print the log per seconds.It cannot work alone,it need to be after `tail -f `.
+
+# Build
 ```
 cargo build
 ```
