@@ -1,3 +1,4 @@
+
 use std::env;
 use std::time::{SystemTime};
 use std::io;
@@ -21,7 +22,7 @@ fn main() {
 		match start.elapsed() {
 			Ok(elapsed) => {
 				if elapsed.as_secs() >= 1 {
-					println!("logps: {} [{}s]",log_cnt,elapsed.as_secs(),);
+					println!("logps: {} [{}s] =>{}",log_cnt,elapsed.as_secs(),log);
 					log_cnt = 0;
 					start = SystemTime::now();
 				}
