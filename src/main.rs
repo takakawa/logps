@@ -1,5 +1,5 @@
 use std::env;
-use std::time::{SystemTime,UNIX_EPOCH};
+use std::time::{SystemTime};
 use std::io;
 
 
@@ -12,16 +12,16 @@ fn main() {
 	
 
 	loop {
-		let mut guess = String::new();
-		let bytes = io::stdin().read_line(&mut guess)
+		let mut log = String::new();
+		io::stdin().read_line(& mut log)
 		.ok()
 		.expect("Failed to read line");
-		log_cnt += 1;
 
+		log_cnt += 1;
 		match start.elapsed() {
 			Ok(elapsed) => {
 				if elapsed.as_secs() >= 1 {
-					println!("elapsed: {}s logps: {}",elapsed.as_secs(),log_cnt);
+					println!("logps: {} [{}s]",log_cnt,elapsed.as_secs(),);
 					log_cnt = 0;
 					start = SystemTime::now();
 				}
