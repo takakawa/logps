@@ -1,3 +1,7 @@
+# Compile
+```
+cargo build
+```
 # Usage
 ```
 tail -f /var/log/yourlog | /path/to/logps
